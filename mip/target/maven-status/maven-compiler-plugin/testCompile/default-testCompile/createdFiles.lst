@@ -1,0 +1,4 @@
+org/ndsc/mimicIO/mip/ManagementMessageTests.class
+org/ndsc/mimicIO/mip/ErrorMessageTests.class
+org/ndsc/mimicIO/mip/OpenFlowMessageTests.class
+org/ndsc/mimicIO/mip/HelloMessageTests.class

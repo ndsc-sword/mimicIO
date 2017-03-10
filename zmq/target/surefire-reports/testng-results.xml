@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="68" started-at="2017-03-10T21:01:11Z" finished-at="2017-03-10T21:01:11Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="68" started-at="2017-03-10T21:01:11Z" finished-at="2017-03-10T21:01:11Z">
+      <class name="org.ndsc.mimicIO.zmp.AppTest">
+        <test-method status="PASS" signature="testApp()[pri:0, instance:testApp(org.ndsc.mimicIO.zmp.AppTest)]" name="testApp" duration-ms="6" started-at="2017-03-11T05:01:11Z" finished-at="2017-03-11T05:01:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testApp -->
+      </class> <!-- org.ndsc.mimicIO.zmp.AppTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

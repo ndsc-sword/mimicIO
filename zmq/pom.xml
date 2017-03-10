@@ -1,18 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>mnos</artifactId>
-        <groupId>org.ndsc.mnos</groupId>
+        <artifactId>mimicIO</artifactId>
+        <groupId>org.ndsc.mimicIO</groupId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mnos-zmq</artifactId>
+    <artifactId>mimicIO-zmq</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>mnos-zmq</name>
+    <name>mimicIO-zmq</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -27,14 +27,14 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.ndsc.mnos</groupId>
-            <artifactId>mnos-mip</artifactId>
+            <groupId>org.ndsc.mimicIO</groupId>
+            <artifactId>mimicIO-mip</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.ndsc.mnos</groupId>
-            <artifactId>mnos-mapi</artifactId>
+            <groupId>org.ndsc.mimicIO</groupId>
+            <artifactId>mimicIO-mapi</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
@@ -55,6 +55,12 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.12</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
