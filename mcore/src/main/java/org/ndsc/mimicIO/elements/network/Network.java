@@ -2,6 +2,7 @@ package org.ndsc.mimicIO.elements.network;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import org.ndsc.mimicIO.dicovery.LLDPEventHandler;
 import org.ndsc.mimicIO.elements.datapath.Switch;
 import org.ndsc.mimicIO.elements.port.Port;
 import org.ndsc.mimicIO.elements.link.Link;

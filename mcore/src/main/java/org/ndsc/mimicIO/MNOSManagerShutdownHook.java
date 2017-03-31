@@ -38,7 +38,7 @@ public class MNOSManagerShutdownHook extends Thread {
      *
      * @see #start()
      * @see #stop()
-     * @see #Thread(ThreadGroup, Runnable, String)
+     * @see Thread(ThreadGroup, Runnable, String)
      */
     @Override
     public void run() {

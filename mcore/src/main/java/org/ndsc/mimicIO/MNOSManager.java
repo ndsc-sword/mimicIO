@@ -86,7 +86,7 @@ public class MNOSManager implements Runnable{
         this.clientThreads = new OrderedMemoryAwareThreadPoolExecutor(
                 nClientThreads, 1048576, 1048576, 5, TimeUnit.SECONDS);
         this.serverThreads = new OrderedMemoryAwareThreadPoolExecutor(
-                nClientThreads, 1048576, 1048576, 5, TimeUnit.SECONDS);
+                nServerThreads, 1048576, 1048576, 5, TimeUnit.SECONDS);
 
 
     }
@@ -183,7 +183,7 @@ public class MNOSManager implements Runnable{
             this.cfact.releaseExternalResources();
         }
 
-        this.loggger.info("Shutting down database connection");
+        this.logger.info("Shutting down database connection");
         DBManager.getInstance().close();
     }
 }
