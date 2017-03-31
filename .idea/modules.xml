@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mimicIO.iml" filepath="$PROJECT_DIR$/mimicIO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mcore/mimicIO-core.iml" filepath="$PROJECT_DIR$/mcore/mimicIO-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mapi/mimicIO-mapi.iml" filepath="$PROJECT_DIR$/mapi/mimicIO-mapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mip/mimicIO-mip.iml" filepath="$PROJECT_DIR$/mip/mimicIO-mip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zmq/mimicIO-zmq.iml" filepath="$PROJECT_DIR$/zmq/mimicIO-zmq.iml" />
+    </modules>
+  </component>
+</project>

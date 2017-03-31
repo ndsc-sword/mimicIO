@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mimicIO-core" />
+        <module name="mimicIO-mapi" />
+        <module name="mimicIO-mip" />
+        <module name="mimicIO-zmq" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mimicIO" target="1.5" />
+      <module name="mimicIO-core" target="1.5" />
+      <module name="mimicIO-mapi" target="1.8" />
+      <module name="mimicIO-mip" target="1.8" />
+      <module name="mimicIO-zmq" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
