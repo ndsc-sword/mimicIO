@@ -24,6 +24,7 @@ import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.handler.execution.OrderedMemoryAwareThreadPoolExecutor;
 import org.ndsc.mimicIO.cmd.CmdLineSettings;
 import org.ndsc.mimicIO.db.DBManager;
+import org.ndsc.mimicIO.io.SwitchChannelPipeline;
 import org.openflow.vendor.nicira.OFNiciraVendorExtensions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,7 +62,7 @@ public class MNOSManager implements Runnable{
     private final ChannelGroup cg = new DefaultChannelGroup();
 
     private SwitchChannelPipeline pfact = null;
-    private ClientChannelPipeline cfact = null;
+    // private ClientChannelPipeline cfact = null;
 
     private Integer statsRefresh;
 
@@ -179,9 +180,9 @@ public class MNOSManager implements Runnable{
         if (this.pfact != null) {
             this.pfact.releaseExternalResources();
         }
-        if (this.cfact != null) {
+        /*if (this.cfact != null) {
             this.cfact.releaseExternalResources();
-        }
+        }*/
 
         this.logger.info("Shutting down database connection");
         DBManager.getInstance().close();

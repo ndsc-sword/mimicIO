@@ -13,29 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.ndsc.mimicIO.io;
+package org.ndsc.mimicIO.messages;
 
-import net.onrc.openvirtex.core.OpenVirteXController;
-import net.onrc.openvirtex.elements.datapath.Switch;
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.handler.timeout.IdleStateAwareChannelHandler;
-import org.ndsc.mimicIO.MNOSManager;
-import org.openflow.protocol.OFType;
+import net.onrc.openvirtex.elements.datapath.PhysicalSwitch;
+import org.openflow.protocol.OFFeaturesReply;
 
-import java.io.IOException;
+public class OVXFeaturesReply extends OFFeaturesReply implements Virtualizable {
 
-public abstract class OFChannelHandler extends IdleStateAwareChannelHandler {
+    @Override
+    public void virtualize(final PhysicalSwitch sw) {
+        // TODO: Log error, we should never receive this message here
+        return;
 
-    @SuppressWarnings("rawtypes")
-    protected Switch sw;
-    protected Channel channel;
-    protected MNOSManager ctrl;
-
-    public abstract boolean isHandShakeComplete();
-
-    protected abstract String getSwitchInfoString();
-
-    protected abstract void sendHandShakeMessage(OFType type)
-            throws IOException;
+    }
 
 }

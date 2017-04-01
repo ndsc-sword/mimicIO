@@ -13,29 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.ndsc.mimicIO.io;
+package org.ndsc.mimicIO.messages.actions;
 
-import net.onrc.openvirtex.core.OpenVirteXController;
-import net.onrc.openvirtex.elements.datapath.Switch;
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.handler.timeout.IdleStateAwareChannelHandler;
-import org.ndsc.mimicIO.MNOSManager;
-import org.openflow.protocol.OFType;
+import net.onrc.openvirtex.elements.datapath.OVXSwitch;
+import net.onrc.openvirtex.exceptions.ActionVirtualizationDenied;
+import net.onrc.openvirtex.protocol.OVXMatch;
+import org.openflow.protocol.action.OFAction;
+import org.openflow.protocol.action.OFActionTransportLayerDestination;
 
-import java.io.IOException;
+import java.util.List;
 
-public abstract class OFChannelHandler extends IdleStateAwareChannelHandler {
+public class OVXActionTransportLayerDestination extends
+        OFActionTransportLayerDestination implements VirtualizableAction {
 
-    @SuppressWarnings("rawtypes")
-    protected Switch sw;
-    protected Channel channel;
-    protected MNOSManager ctrl;
-
-    public abstract boolean isHandShakeComplete();
-
-    protected abstract String getSwitchInfoString();
-
-    protected abstract void sendHandShakeMessage(OFType type)
-            throws IOException;
+    @Override
+    public void virtualize(final OVXSwitch sw,
+            final List<OFAction> approvedActions, final OVXMatch match)
+            throws ActionVirtualizationDenied {
+        approvedActions.add(this);
+    }
 
 }

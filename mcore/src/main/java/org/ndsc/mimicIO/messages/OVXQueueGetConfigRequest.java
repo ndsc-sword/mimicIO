@@ -13,29 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.ndsc.mimicIO.io;
+package org.ndsc.mimicIO.messages;
 
-import net.onrc.openvirtex.core.OpenVirteXController;
-import net.onrc.openvirtex.elements.datapath.Switch;
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.handler.timeout.IdleStateAwareChannelHandler;
-import org.ndsc.mimicIO.MNOSManager;
-import org.openflow.protocol.OFType;
+import net.onrc.openvirtex.elements.datapath.OVXSwitch;
+import net.onrc.openvirtex.elements.port.OVXPort;
+import org.openflow.protocol.OFError.OFBadRequestCode;
+import org.openflow.protocol.OFQueueGetConfigRequest;
 
-import java.io.IOException;
+public class OVXQueueGetConfigRequest extends OFQueueGetConfigRequest implements
+        Devirtualizable {
 
-public abstract class OFChannelHandler extends IdleStateAwareChannelHandler {
+    @Override
+    public void devirtualize(final OVXSwitch sw) {
+        final OVXPort p = sw.getPort(this.getPortNumber());
+        if (p == null) {
+            sw.sendMsg(OVXMessageUtil.makeErrorMsg(
+                    OFBadRequestCode.OFPBRC_EPERM, this), sw);
+            return;
+        }
 
-    @SuppressWarnings("rawtypes")
-    protected Switch sw;
-    protected Channel channel;
-    protected MNOSManager ctrl;
-
-    public abstract boolean isHandShakeComplete();
-
-    protected abstract String getSwitchInfoString();
-
-    protected abstract void sendHandShakeMessage(OFType type)
-            throws IOException;
+        OVXMessageUtil.translateXid(this, p);
+    }
 
 }

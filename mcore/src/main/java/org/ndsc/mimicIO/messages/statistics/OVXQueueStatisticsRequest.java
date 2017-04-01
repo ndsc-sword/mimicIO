@@ -13,29 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.ndsc.mimicIO.io;
+package org.ndsc.mimicIO.messages.statistics;
 
-import net.onrc.openvirtex.core.OpenVirteXController;
-import net.onrc.openvirtex.elements.datapath.Switch;
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.handler.timeout.IdleStateAwareChannelHandler;
-import org.ndsc.mimicIO.MNOSManager;
-import org.openflow.protocol.OFType;
+import net.onrc.openvirtex.elements.datapath.OVXSwitch;
+import net.onrc.openvirtex.messages.OVXStatisticsRequest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openflow.protocol.statistics.OFQueueStatisticsRequest;
 
-import java.io.IOException;
+public class OVXQueueStatisticsRequest extends OFQueueStatisticsRequest
+        implements DevirtualizableStatistic {
 
-public abstract class OFChannelHandler extends IdleStateAwareChannelHandler {
+    Logger log = LogManager
+            .getLogger(OVXQueueStatisticsRequest.class.getName());
 
-    @SuppressWarnings("rawtypes")
-    protected Switch sw;
-    protected Channel channel;
-    protected MNOSManager ctrl;
-
-    public abstract boolean isHandShakeComplete();
-
-    protected abstract String getSwitchInfoString();
-
-    protected abstract void sendHandShakeMessage(OFType type)
-            throws IOException;
+    @Override
+    public void devirtualizeStatistic(final OVXSwitch sw,
+            final OVXStatisticsRequest msg) {
+        // TODO
+        log.info("Queue statistics handling not yet implemented");
+    }
 
 }
